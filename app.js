@@ -15,13 +15,13 @@ app.use((req, res, next) => {
 });
 
 // Middleware to verify RapidAPI secret
-app.use((req, res, next) => {
-    const rapidAPISecret = req.headers['x-rapidapi-proxy-secret'];
-    if (rapidAPISecret !== process.env.RAPIDAPI_SECRET) {
-        return res.status(403).json({ error: 'Forbidden: Invalid RapidAPI Secret' });
-    }
-    next();
-});
+// app.use((req, res, next) => {
+//     const rapidAPISecret = req.headers['x-rapidapi-proxy-secret'];
+//     if (rapidAPISecret !== process.env.RAPIDAPI_SECRET) {
+//         return res.status(403).json({ error: 'Forbidden: Invalid RapidAPI Secret' });
+//     }
+//     next();
+// });
 
 app.use(express.json());
 
